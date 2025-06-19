@@ -2,14 +2,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.*;
 
-
 public class Main{
         public static void main(String[] args) throws Exception{
 
         int boardWidth = 360;
         int boardHeight = 640;
-
-
 
                 JFrame frame = new JFrame("Flappy Bird");
                 frame.setSize(boardWidth, boardHeight);
