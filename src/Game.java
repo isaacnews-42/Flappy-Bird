@@ -131,8 +131,9 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         g.setFont(new Font("Tahoma", Font.BOLD, 32));
         if (gameOver) {
             g.setFont(new Font("Tahoma", Font.BOLD, 20));
-            g.drawString("Game Over, final score: " + String.valueOf((int) score), 10, 35);
-            g.drawString("Press SPACE to Restart", 10, 65);
+            g.drawString("Game Over, final score: " + String.valueOf((int) score), 10, 25);
+            g.drawString("Press Space to Restart", 10, 50);
+            g.drawString("Press Escape to Exit", 10, 75);
         } else {
             g.drawString(String.valueOf((int) score), 10, 35);
         }
@@ -196,6 +197,9 @@ public class Game extends JPanel implements ActionListener, KeyListener {
                 gameLoop.start();
                 placePipeTimer.start();
             }
+        }
+        if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
+            System.exit(0);
         }
     }
 
