@@ -17,6 +17,8 @@ public class Game extends JPanel implements ActionListener, KeyListener {
     Image birdImage;
     Image toppipeImage;
     Image bottompipeImage;
+    Image goldtoppipeImage;
+    Image goldbottompipeImage;
 
     int birdx = boardWidth / 8;
     int birdy = boardHeight / 2;
@@ -79,6 +81,9 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         birdImage = new ImageIcon("flappybirdimages/flappybird.png").getImage();
         bottompipeImage = new ImageIcon("flappybirdimages/bottompipe.png").getImage();
         toppipeImage = new ImageIcon("flappybirdimages/toppipe.png").getImage();
+        goldtoppipeImage = new ImageIcon("flappybirdimages/goldtoppipe.png").getImage();
+        goldbottompipeImage = new ImageIcon("flappybirdimages/goldbottompipe.png").getImage();
+
 
         bird = new Bird(birdImage);
         pipes = new ArrayList<Pipe>();
@@ -101,15 +106,25 @@ public class Game extends JPanel implements ActionListener, KeyListener {
         int openingSpace = boardHeight / 4;
         int initialPipeX = boardWidth;
 
-        Pipe topPipe = new Pipe(toppipeImage);
+        boolean isGold = Math.random() < 0.15;
+
+        Image topImg = isGold ? goldtoppipeImage : toppipeImage;
+        Image bottomImg = isGold ? goldbottompipeImage : bottompipeImage;
+
+
+        Pipe topPipe = new Pipe(topImg);
         topPipe.y = randomPipeY;
         topPipe.x = initialPipeX;
         pipes.add(topPipe);
 
-        Pipe bottomPipe = new Pipe(bottompipeImage);
+        Pipe bottomPipe = new Pipe(bottomImg);
         bottomPipe.y = topPipe.y + pipeHeight + openingSpace;
         bottomPipe.x = initialPipeX;
         pipes.add(bottomPipe);
+    }
+
+    boolean isGoldPipe(Pipe pipe) {
+        return pipe.img == goldtoppipeImage || pipe.img == goldbottompipeImage;
     }
 
     public void paintComponent(Graphics g) {
@@ -150,11 +165,11 @@ public class Game extends JPanel implements ActionListener, KeyListener {
             Pipe pipe = pipes.get(i);
             pipe.x += velocityx;
 
-            if (!pipe.passed && bird.x > pipe.x + pipe.width) {
-
-                score += .5;
-                pipe.passed = true;
-
+            if (pipe.img == toppipeImage || pipe.img == goldtoppipeImage) {
+                if (!pipe.passed && bird.x > pipe.x + pipe.width) {
+                    score += isGoldPipe(pipe) ? 5 : 1;
+                    pipe.passed = true;
+                }
             }
 
             if (collision(bird, pipe)) {
