@@ -1,10 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.*;
-
 public class Main{
         public static void main(String[] args){
-
         int boardWidth = 360;
         int boardHeight = 640;
 

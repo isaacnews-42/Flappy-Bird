@@ -19,7 +19,7 @@ Made a game of Flappy Bird using Java.
 - Press **Space** to jump *and* restart after game over.
 - Press **Esc** to exit the game (You may exit the game at any time).
 
-## Game features:
+## Game features
 - Procedurally generated pipes with random gaps
 - Gold Pipes that give bonus score
 - Gravity based movement physics
@@ -27,15 +27,16 @@ Made a game of Flappy Bird using Java.
 - Score tracking
 - Game over + restart system
 
-## IDE Used:
+## IDE Used
 IntelliJ
 
-## Made by:
+## Made by
 Isaac Afram
 
 ## Screenshots
-![img_3.png](img_3.png)
-![img_1.png](img_1.png)
 ![img.png](img.png)
+![img_1.png](img_1.png)
 ![img_2.png](img_2.png)
+![img_3.png](img_3.png)
+
 
