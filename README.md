@@ -1,6 +1,6 @@
 # Flappy Bird
 
-Made a game of Flappy Bird using Java.
+Made a game of Flappy Bird using Java
 
 ## How to Play
 
@@ -8,7 +8,7 @@ Made a game of Flappy Bird using Java.
 - The regular green pipes are worth 1 point.
 - Gold pipes have a 15% chance of spawning and are worth 5 points.
 - Avoid hitting the pipes or the ground.
-- There is no limit, score as many points as you can!
+- There is no limit, get through as many pipes as you can!
 
 ## Requirements to Play
 
@@ -16,8 +16,8 @@ Made a game of Flappy Bird using Java.
 - Any Java IDE or terminal that can run Java
 
 ## Controls
-- Press **Space** to jump *and* restart after game over.
-- Press **Esc** to exit the game (You may exit the game at any time).
+- Press **Space** to jump *and* restart after game over
+- Press **Esc** to exit the game (You may exit the game at any time)
 
 ## Game features
 - Procedurally generated pipes with random gaps
